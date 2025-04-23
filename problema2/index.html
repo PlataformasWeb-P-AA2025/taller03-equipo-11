@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Formulario de Datos Personales</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <body>
+  <h1>Datos Personales</h1>
+    <div class="container">
+      <div class="form-section">
+        <h2>Formulario</h2>
+        <form id="datosForm">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+          </div>
+          <div>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido">
+          </div>
+          <div>
+            <label for="fechaNacimiento">Fecha de nacimiento:</label>
+            <input type="text" id="fechaNacimiento" name="fechaNacimiento">
+          </div>
+          <button type="button" id="generarMensaje">Generar Mensaje</button>
+        </form>
+      </div>
+
+      <div class="results-section" id="resultadosSection">
+        <h2>Datos ingresados</h2>
+        <div id="resultados"></div>
+      </div>
+    </div>
+
+  </body>
