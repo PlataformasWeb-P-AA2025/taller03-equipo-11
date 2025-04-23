@@ -1,0 +1,12 @@
+.mensaje /*referencia a todos los elementos con id mensaje*/{ 
+  font-size: 30px; 
+  border: 2px solid #fff033 ; /*crea el borde interno al primer texto*/
+
+ 
+
+}
+
+.dos /*referencia a la segunda parte de elementod con id 2*/{
+  text-decoration: underline #219713 ;/* subrraya el texto con underline y el numero le da el color  */
+
+}
