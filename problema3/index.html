@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width" name="viewport"/>
+    <title>DATOS DE PAÍSES</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <h1>Datos de Países del Mundo</h1>
 
+    <section class="controles">
+        <button id="obtenerInformacion" type="submit">Obtener información</button>
+        <button id="limpiarInformacion" type="submit">Limpiar información</button>
+    </section>
+
+    <!-- Usamos section para el contenedor de las tarjetas -->
+    <section id="mensajeFinal"></section>
+
+    <script>
+        $(document).ready(function () {
+            var url = "https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/616b1fb83cbfd4eb6d9e7d52924bb00a/country-codes_json.json";
+
+            $("#obtenerInformacion").click(function () {
+                // Limpiar contenido previo
+                $('#mensajeFinal').empty();
+
+                $.ajax({
+                    dataType: 'json',
+                    url: url
+                }).then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        // Crear una tarjeta para cada país
+                        var tarjeta = '<section class="tarjeta">';
+
+                        // Agregar el nombre del país como título
+                        if (data[i]["CLDR display name"]) {
+                            tarjeta += '<h3>' + data[i]["CLDR display name"] + '</h3>';
+                        } else {
+                            tarjeta += '<h3>País ' + (i+1) + '</h3>';
+                        }
+
+                        tarjeta += '<p><b>Country\'s customary English short name (CLDR):</b> ' + (data[i]["CLDR display name"] || 'No disponible') + '</p>';
+                        tarjeta += '<p><b>Capital city from Geonames:</b> ' + (data[i]["Capital"] || 'No disponible') + '</p>';
+                        tarjeta += '<p><b>Codes from the U.S. standard FIPS PUB 10-4:</b> ' + (data[i]["FIPS"] || 'No disponible') + '</p>';
+                        tarjeta += '<p><b>Codes assigned by the Fédération Internationale de Football Association:</b> ' + (data[i]["FIFA"] || 'No disponible') + '</p>';
+                        tarjeta += '<p><b>Continent from Geonames:</b> ' + (data[i]["Continent"] || 'No disponible') + '</p>';
+                        tarjeta += '<p><b>Languages from Geonames:</b> ' + (data[i]["Languages"] || 'No disponible') + '</p>';
+                        tarjeta += '<p><b>Geoname ID:</b> ' + (data[i]["Geoname ID"] || 'No disponible') + '</p>';
+                        tarjeta += '<p><b>Distinguishing signs of vehicles in international traffic:</b> ' + (data[i]["DS"] || 'No disponible') + '</p>';
+
+                        tarjeta += '</section>';
+
+                        // Añadir la tarjeta al contenedor
+                        $('#mensajeFinal').append(tarjeta);
+                    }
+                }).fail(function(error) {
+                    $('#mensajeFinal').html('<p style="text-align: center; color: #d9534f;">Error al cargar los datos: ' + error.statusText + '</p>');
+                });
+            });
+
+            $("#limpiarInformacion").click(function () {
+                $('#mensajeFinal').empty();
+            });
+        });
+    </script>
 </body>
 </html>

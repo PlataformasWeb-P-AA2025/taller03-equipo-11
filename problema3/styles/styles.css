@@ -1,0 +1,60 @@
+/* Estilo general del cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;  /* fuente principal */
+    line-height: 1.6;                /* altura de línea para mejorar legibilidad */
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;                  /* centrar horizontalmente */
+    padding: 20px;                   /* espaciado interno general */
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Botones generales */
+button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.2s; /* animación suave hover */
+}
+
+/* Efecto hover en botones */
+button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Estilo para cada tarjeta de país (usando <section class="tarjeta">) */
+.tarjeta {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin: 15px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* sombra suave  */
+}
+
+/* Encabezado de cada tarjeta */
+.tarjeta h3 {
+    margin-top: 0;                 /* quitar margen superior */
+    padding-bottom: 10px;          /* separar entre tarjetas */
+    border-bottom: 1px solid #eee;/* línea div inferior */
+    color: #555;
+}
+
+/* Párrafos dentro de las tarjetas */
+.tarjeta p {
+    margin: 8px 0;                 /* separación vert */
+}
+
+/* Contenedor de botones */
+.controles {
+    text-align: center;
+    margin: 20px 0;
+}
