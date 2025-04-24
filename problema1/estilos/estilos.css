@@ -1,12 +1,20 @@
-.mensaje /*referencia a todos los elementos con id mensaje*/{ 
-  font-size: 30px; 
-  border: 2px solid #fff033 ; /*crea el borde interno al primer texto*/
-
- 
+.uno{
+    margin: 12px;/*Alinea el contenido de uno para que este al mismo nivel que el resto del contenido  */
+   outline: 14px solid #779db2;/*Esto hace que el borde inferior sea azul */
+   border: 4px solid yellow;/*Le da un color amarillo y un ancho de 4px al borde interno*/
 
 }
+.mensaje /*referencia a todos los elementos con id mensaje*/{
+  margin: 20px;/*le da un margen de 20px al contenido de mensaje*/
+  font-size: 30px;/*Aumenta el tamaño del texto*/
+  font-weight: bold;/*Hace que el texto esté en negrita*/
+}
 
-.dos /*referencia a la segunda parte de elementod con id 2*/{
-  text-decoration: underline #219713 ;/* subrraya el texto con underline y el numero le da el color  */
-
+.dos /*referencia a la segunda parte de elemento con id dos*/{
+    /*Cambia el fondo y el color de la letra del bloque con id dos */
+  background-color:#db853d;
+  color:white;
+}
+.comentario{
+  border-bottom: 3px solid #219713;/*Le da un borde al componente comentario */
 }
