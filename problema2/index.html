@@ -1,38 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width" name="viewport"/>
     <title>Formulario de Datos Personales</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <body>
-  <h1>Datos Personales</h1>
-    <div class="container">
-      <div class="form-section">
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<h1>Datos Personales</h1>
+<section class="container">
+    <section class="form-section">
         <h2>Formulario</h2>
         <form id="datosForm">
-          <div>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre">
-          </div>
-          <div>
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido">
-          </div>
-          <div>
-            <label for="fechaNacimiento">Fecha de nacimiento:</label>
-            <input type="text" id="fechaNacimiento" name="fechaNacimiento">
-          </div>
-          <button type="button" id="generarMensaje">Generar Mensaje</button>
+            <section>
+                <label for="nombre">Nombre:</label>
+                <input id="nombre" name="nombre" type="text">
+            </section>
+            <section>
+                <label for="apellido">Apellido:</label>
+                <input id="apellido" name="apellido" type="text">
+            </section>
+            <section>
+                <label for="fechaNacimiento">Fecha de nacimiento:</label>
+                <input id="fechaNacimiento" name="fechaNacimiento" type="text">
+            </section>
+            <button id="generarMensaje" type="button">Generar Mensaje</button>
         </form>
-      </div>
+    </section>
 
-      <div class="results-section" id="resultadosSection">
+    <section class="resultadosSection" id="resultadosSection">
         <h2>Datos ingresados</h2>
-        <div id="resultados"></div>
-      </div>
-    </div>
+        <section id="resultados"></section>
+    </section>
+</section>
 
-  </body>
+<script>
+    $(document).ready(function () {
+        // Inicializar datepicker
+        $("#fechaNacimiento").datepicker({
+            dateFormat: "mm/dd/yy"
+        });
+
+        $("#resultadosSection").hide();
+
+        $("#generarMensaje").click(function () {
+            var nombre = $("#nombre").val();
+            var apellido = $("#apellido").val();
+            var fechaNacimiento = $("#fechaNacimiento").val();
+
+            $.ajax({}).then(function () {
+                console.log(nombre);
+                console.log(apellido);
+                console.log(fechaNacimiento);
+            });
+
+            $("#resultados").html(
+                '<section class="dato">' + nombre + '</section>' +
+                '<section class="dato">' + apellido + '</section>' +
+                '<section class="dato">' + fechaNacimiento + '</section>'
+            );
+
+            $("#resultadosSection").show();
+        });
+    });
+</script>
+</body>
+</html>

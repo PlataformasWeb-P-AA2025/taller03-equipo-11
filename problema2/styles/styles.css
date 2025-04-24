@@ -1,0 +1,104 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;                    /* espaciado entre líneas para mejor legibilidad */
+    margin: 0;
+    padding: 20px;                       /* espacio interior alrededor de todo el contenido */
+    background-color: #f9f9f9;
+}
+
+/* Estilo para el título principal */
+h1 {
+    color: #444;
+    border-bottom: 1px solid #ddd;       /* línea separadora debajo del título */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal DE COLUMNAS */
+.container {
+    display: flex;                       /* para centrar */
+    max-width: 900px;
+    margin: 0 auto;                      /* pone el section horizontal */
+}
+
+/* Sección del formulario */
+.form-section {
+    flex: 1;                             /* toma una parte equitativa del espacio disponible */
+    padding-right: 30px;                 /* espacio a la derecha para separar del área de resultados */
+}
+
+/* Sección de resultados */
+.resultadosSection {
+    flex: 1;
+    padding-left: 30px;
+    border-left: 1px solid #ddd;
+}
+
+/* Espaciado para las secciones dentro */
+form section {
+    margin-bottom: 15px;
+}
+
+/* Estilo para las etiquetas de los campos */
+label {
+    display: block;                      /* hace que las etiquetas ocupen toda la línea */
+    margin-bottom: 5px;
+    font-weight: bold;                   /* texto en negrita para destacar las etiquetas */
+    color: #555;
+}
+
+/* Estilo para los campos de entrada de texto */
+input[type="text"] {
+    width: 100%;                         /* ocupa todo el ancho*/
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;              /* incluye padding y borde en el ancho total */
+    font-size: 16px;
+    transition: border-color 0.3s;       /* animar suave cuando cambiar el color del borde */
+}
+
+/* Estilo cuando el campo de texto está enfocado */
+input[type="text"]:focus {
+    border-color: #777;                  /* oscurece el borde */
+    outline: none;                       /* elimina el contorno predeterminado del navegador */
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;                     /* cambia el cursor a mano al pasar sobre el botón */
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Estilo al pasar el cursor sobre el botón */
+button:hover {
+    background-color: #444;              /* color ligeramente más oscuro al pasar el cursor */
+}
+
+/* Estilo para la sección de resultados */
+#resultados {
+    line-height: 2;                      /* mayor espaciado entre líneas para mejor legibilidad */
+    font-size: 16px;
+}
+
+/* Estilo para cada dato individual en la sección de resultados */
+#resultados .dato {
+    padding: 8px 0;                      /* espaciado vertical para cada dato */
+    border-bottom: 1px solid #eee;       /* línea separadora entre datos */
+}
+
+/* Estilo para los subtítulos h2 */
+h2 {
+    color: #555;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
